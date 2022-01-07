@@ -31,7 +31,7 @@ const getMintedNames = async () => {
             include: "metadata",
             page_number: pageNumber,
             page_size: pageSize,
-            refresh_metadata: false
+            refresh_metadata: true
         };
         const qs = Object.keys(qsObject).reduce((str, key) => {
             const start = str === "?" ? "" : "&"

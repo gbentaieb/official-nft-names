@@ -10,7 +10,7 @@ images_dir_path = os.path.join(output_path, 'images')
 json_dir_path = os.path.join(output_path, 'json')
 minted_dir_path = os.path.join(output_path, 'mint_result')
 
-names_edition = 2
+names_edition = 4
 minted_names_tracker = {}
 
 def clear_output_directories():
