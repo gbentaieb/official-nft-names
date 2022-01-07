@@ -23,8 +23,8 @@ fs.readdirSync(readDir).forEach((file) => {
 
   const jsonFile = fs.readFileSync(`${readDir}/${file}`);
 
-  let url = "https://api.nftport.xyz/v0/metadata";
-  let options = {
+  const url = "https://api.nftport.xyz/v0/metadata";
+  const options = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

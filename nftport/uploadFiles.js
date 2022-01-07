@@ -17,8 +17,8 @@ fs.readdirSync(`${basePath}/${imageFolder}`).forEach((file) => {
   const fileStream = fs.createReadStream(`${basePath}/${imageFolder}/${file}`);
   formData.append("file", fileStream);
 
-  let url = "https://api.nftport.xyz/v0/files";
-  let options = {
+  const url = "https://api.nftport.xyz/v0/files";
+  const options = {
     method: "POST",
     headers: {
       Authorization: AUTH,
@@ -28,8 +28,8 @@ fs.readdirSync(`${basePath}/${imageFolder}`).forEach((file) => {
 
   successCallback = (json) => {
     const fileName = path.parse(json.file_name).name;
-    let rawdata = fs.readFileSync(`${basePath}/${jsonFolder}/${fileName}.json`);
-    let metaData = JSON.parse(rawdata);
+    const rawdata = fs.readFileSync(`${basePath}/${jsonFolder}/${fileName}.json`);
+    const metaData = JSON.parse(rawdata);
 
     metaData.file_url = json.ipfs_url;
 

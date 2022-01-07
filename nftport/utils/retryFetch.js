@@ -56,4 +56,4 @@ const retryFetch = async (url, fetchOptions = {}, retries = 3, retryDelay = 3000
     return await wrapper(retries)
 }
 
-module.exports = { queueFetch, executeFetch }
+module.exports = { queueFetch, executeFetch, retryFetch }

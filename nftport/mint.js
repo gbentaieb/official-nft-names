@@ -30,7 +30,7 @@ writter.write("[");
 nftCount = ipfsMetas.length;
 
 ipfsMetas.forEach((meta) => {
-  let url = "https://api.nftport.xyz/v0/mints/customizable";
+  const url = "https://api.nftport.xyz/v0/mints/customizable";
 
   const mintInfo = {
     chain: CHAIN,
@@ -39,7 +39,7 @@ ipfsMetas.forEach((meta) => {
     mint_to_address: MINT_TO_ADDRESS,
   };
 
-  let options = {
+  const options = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -62,7 +62,7 @@ ipfsMetas.forEach((meta) => {
       writter.write(",\n");
     }
 
-    console.log(`Minted: ${json.transaction_external_url}`);
+    console.log(`Minted: ${meta.name} - ${json.transaction_external_url}`);
   }
 
   errorCallback = (err) => {
